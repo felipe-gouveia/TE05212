@@ -51,28 +51,22 @@ iterations = 1500;
 alpha = 0.01;
  
 % Calcula o custo inicial para X1 e X2
-J1 = computeCost(X1, y, theta1); %function described below
-J2 = computeCost(X2, y, theta2); %function described below
+J1 = computeCost(X1, y, theta1) %function described below
+J2 = computeCost(X2, y, theta2) %function described below
 
 theta1 = gradientDescent(X1, y, theta1, alpha, iterations); % theta contains value of theta0 and theta1
 theta2 = gradientDescent(X2, y, theta2, alpha, iterations); % theta contains value of theta0 and theta1
 
-% Calcula o custo inicial para X1 e X2
-J1 = computeCost(X1, y, theta1); %function described below
-J2 = computeCost(X2, y, theta2); %function described below
+% Calcula o custo após a regressão linear
+J1 = computeCost(X1, y, theta1) %function described below
+J2 = computeCost(X2, y, theta2) %function described below
 
-%predict1 = [1, 3.5] *theta; %predict for new data
-
-% D) Construa um gráfico obtendo h versus training e y versus training
+% Plotamos o gráfico
+% 1o plot = Design Matrix (bias e training) x Hipótese de 1a Ordem
+% 2o plot = Design Matrix (bias e training) x Hipótese de 2a Ordem
+% 3o plot = Design Matrix (bias e training) x Conjunto de Saída
 figure(1)
 plot(X,X1*theta1,'g',X,X2*theta2,'b-X',X,y,'r--o')
-%hold on
-%plot(X,X1*theta1,'b-',X,y,'r-')
-%hold on
-%plot(X,X2*theta2,'bX',X,y,'rX')
-%hold on
-%plot(X,X2*theta2,'b-',X,y,'r-')
-%hold off
 xlabel('x')
 ylabel('resposta')
 title('valor desejado: o e resposta modelo: .')

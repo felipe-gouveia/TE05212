@@ -71,15 +71,16 @@ hypothesis_2aordem = X2 * theta2;
 % 2o plot = Design Matrix (bias e training) x Hipótese de 2a Ordem
 % 3o plot = Design Matrix (bias e training) x Conjunto de Saída
 figure(1)
-plot(X,X1*theta1,'g',X,X2*theta2,'b.',X,y,'r-o')
+plot(X,X1*theta_1aordem,'g',X,X2*theta_2aordem,'b.',X,y,'r-o')
 xlabel('x')
 ylabel('resposta')
 title('valor desejado: o e resposta modelo: .')
 
-% E) Calcule o erro quadrático
-  
-%sqrError = (h - y).^2;
-%J = 1/(2*m) * sum(sqrError)
+% Cálculo do Erro Médio Quadrático
+sqrError_1aordem = (hypothesis_1aordem - y).^2;
+sqrError_2aordem = (hypothesis_2aordem - y).^2;
+J_1aordem = 1/(2*m) * sum(sqrError_1aordem)
+J_2aordem = 1/(2*m) * sum(sqrError_2aordem)
 %vete = h - y;
 %eqm = 1/nl*(vete'*vete);
 %rmse = sqrt(eqm)
