@@ -81,7 +81,4 @@ sqrError_1aordem = (hypothesis_1aordem - y).^2;
 sqrError_2aordem = (hypothesis_2aordem - y).^2;
 J_1aordem = 1/(2*m) * sum(sqrError_1aordem)
 J_2aordem = 1/(2*m) * sum(sqrError_2aordem)
-%vete = h - y;
-%eqm = 1/nl*(vete'*vete);
-%rmse = sqrt(eqm)
   
